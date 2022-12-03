@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function initialize()
+    {
+        storyText = document.getElementById("storyText");
+        text = "";
+    }
+
+    function winRoomText()
+    {
+        text = "You run back to the entrance, frantically inserting the key into the lock. To your relief it opens. You win.";
+        display();
+    }
+
+    function display()
+    {
+        storyText.innerHTML = text;
+    }
+</script>
+<body onload = "initialize(); winRoomText();">
+    <h1>Room: Entrance</h1>
+    <p id = storyText></p>
+    <img src="win.jfif">
+</body>
+</html>

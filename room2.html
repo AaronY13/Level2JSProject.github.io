@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function initialize()
+    {
+        storyText = document.getElementById("storyText");
+        text = "";
+        
+    }
+
+    function Room2Text()
+    {
+        text = "You walk into living room, the fireplace crackling with flames. It looks like someone is in the house.";
+        display();
+    }
+
+    function death()
+    {
+        window.location.href = "main.html";
+    }
+
+    function show()
+    {
+
+    }
+
+    function display()
+    {
+        storyText.innerHTML = text;
+    }
+</script>
+<body onload = "initialize(); Room2Text();">
+    <h1>Room: Living Room</h1>
+    <p id = storyText></p>
+    <div>
+        <button onclick = "location.href = 'room3.html';">Move to the Bathroom</button>
+        <button onclick = "location.href = 'room4.html';">Climb up the Stairs</button>
+        <button onclick = "location.href = 'room1.html';">Move Back</button>
+    </div>
+    <img id="fire" src="fireplace.jfif">
+</body>
+</html>

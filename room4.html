@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function initialize()
+    {
+        storyText = document.getElementById("storyText");
+        text = "";
+    }
+
+    function bedRoomText()
+    {
+        text = "You enter the bedroom and look around. Something grabs your arm from behind. POP, you hear as the room around you starts to fade to black.";
+        display();
+    }
+
+    function death()
+    {
+        window.location.href = "main.html";
+    }
+
+    function display()
+    {
+        storyText.innerHTML = text;
+    }
+</script>
+<body onload = "initialize(); bedRoomText()">
+    <h1>Room: Bedroom</h1>
+    <p id = storyText></p>
+    <div>
+        <button onclick = "death();">Restart</button>
+    </div>
+    <img src="shadow.jpg">
+</body>
+</html>

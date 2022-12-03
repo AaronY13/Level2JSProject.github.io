@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function initialize()
+    {
+        storyText = document.getElementById("storyText");
+        text = "";
+    }
+
+    function entryRoomText()
+    {
+        text = "You enter a mysterious house. It's pouring outside and the wind is howling.";
+        display();
+    }
+
+    function entryRoomMoveBack()
+    {
+        text = "You turn around and the door suddenly slams shut. Looks like you're staying in.";
+        display();
+    }
+
+    function display()
+    {
+        storyText.innerHTML = text;
+    }
+</script>
+<body onload = "initialize(); entryRoomText();">
+    <h1>Room: Entrance</h1>
+    <p id = storyText></p>
+    <div>
+        <button onclick = "location.href = 'room1.html';">Move to Next Room</button>
+        <button onclick = "entryRoomMoveBack();">Move back</button>
+    </div>
+    <div class="door">
+        <img id="first" src="door.jfif">
+    </div>
+</body>
+</html>

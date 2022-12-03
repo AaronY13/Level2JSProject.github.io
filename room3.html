@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function initialize()
+    {
+        storyText = document.getElementById("storyText");
+        text = "";
+    }
+
+    function bathRoomText()
+    {
+        text = "You enter the bathroom. Inside the bath tub you see a dead body. So that's where the owner went. Maybe there's a ";
+        display();
+        let secret = "<a href='key.html' style='color:lightcoral; text-decoration:none'>secret?</a>"
+        storyText.insertAdjacentHTML('beforeend', secret);
+    }
+
+    function display()
+    {
+        storyText.innerHTML = text;
+    }
+</script>
+<body onload = "initialize(); bathRoomText();">
+    <h1>Room: Bathroom</h1>
+    <p id = storyText></p>
+    <div>
+        <button onclick = "location.href='room2.html'">Move back</button>
+    </div>
+    <img src="body.jfif">
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script>
+    function initialize()
+    {
+        storyText = document.getElementById("storyText");
+        text = "";
+        
+    }
+
+    function Room1Text()
+    {
+        text = "You walk into the next room and realize it is the kitchen. On the cutting board you see a human hand.";
+        display();
+    }
+
+    function pickUpHand()
+    {
+        text = "You pick up the hand. Suddenly it jumps and grabs your neck, choking you to death. You die.";
+        display();
+        show();
+        setTimeout(death, 3000);
+    }
+
+    function death()
+    {
+        window.location.href = "main.html";
+    }
+
+    function show()
+    {
+        document.getElementById('dead').style.display = "block";
+        document.getElementById('room1').style.display = "none";
+    }
+
+    function display()
+    {
+        storyText.innerHTML = text;
+    }
+</script>
+<body onload = "initialize(); Room1Text();">
+    <h1>Room: Kitchen</h1>
+    <p id = storyText></p>
+    <div>
+        <button onclick = "pickUpHand();">Pick up hand</button>
+    <button onclick = "location.href = 'main.html';">Move back</button>
+    <button onclick = "location.href = 'room2.html';">Move to Next Room</button>
+    </div>
+    <div class="reaper">
+        <img id="room1" src="kitchen.jfif" style="display:block">
+        <img id="dead" src="death.jfif" style="display:none">
+    </div>
+</body>
+</html>
